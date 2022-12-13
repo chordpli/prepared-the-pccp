@@ -29,11 +29,11 @@ public class Solution {
             for (int j = i+1; j <d.length ; j++) {
                 if (used + d[j] > budget) {
                     if (used - d[j - 1] + d[j] <= budget) {
+                        count--;
                         used -= d[j-1];
-                        used += d[j];
-                        continue;
+                    }else{
+                        break;
                     }
-                    continue;
                 }
                 used += d[j];
                 count++;
